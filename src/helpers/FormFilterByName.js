@@ -1,14 +1,11 @@
-import React, { useState } from 'react';
+import React, { useContext } from 'react';
 import DataTableContext from '../context/DataTableContext';
 
 function FormFilterByName() {
-  // const { filter } = useContext(DataTableContext);
-  console.log(DataTableContext);
-
-  const [name, setFilterByName] = useState('');
+  const { setFilterByName } = useContext(DataTableContext);
 
   const handleChange = ({ target }) => {
-    setFilterByName(target.value);
+    setFilterByName({ name: target.value });
   };
 
   return (
@@ -17,7 +14,6 @@ function FormFilterByName() {
         data-testid="name-filter" // O campo de texto deve possuir a propriedade data-testid='name-filter'
         type="text"
         placeholder="Filtrar por nome"
-        value={ name }
         onChange={ handleChange }
       />
       <br />

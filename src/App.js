@@ -7,10 +7,13 @@ import fetchAPI from './services/fetchAPI';
 function App() {
   const [planets, setPlanets] = useState([]);
   // estado de infos dos planetas, chave 'results' da resposta da API
+  const [filterByName, setFilterByName] = useState({ name: '' });
+  const [filteredPlanets, setFilteredPlanets] = useState([]);
 
   const storeData = async () => {
     const data = await fetchAPI(); // 'data' recebe response da fetchAPI
-    setPlanets(data); // estado atualizado
+    setPlanets(data);
+    setFilteredPlanets(data);
   };
 
   useEffect(() => { storeData(); }, []);
@@ -18,12 +21,13 @@ function App() {
 
   const TableContext = {
     data: planets,
-    filterByName: {
-      name: '',
-    },
+    filterByName,
+    setFilterByName,
+    filteredPlanets,
+    setFilteredPlanets,
   };
 
-  console.log(TableContext);
+  // console.log(TableContext);
 
   return (
     <DataTableContext.Provider value={ TableContext }>

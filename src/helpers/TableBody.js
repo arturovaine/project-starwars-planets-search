@@ -1,21 +1,27 @@
-import React, { useContext } from 'react';
+import React, { useContext, useEffect } from 'react';
 import DataTableContext from '../context/DataTableContext';
 import '../App.css';
 
 export default function TableBody() {
-  const { data } = useContext(DataTableContext);
-  /*  const [name, setFilterByName] = useState('');
+  const {
+    data,
+    filterByName: { name },
+    filteredPlanets,
+    setFilteredPlanets,
+  } = useContext(DataTableContext);
 
-  const filterByName = (name) => {
-    const planetsFiltered = data.filter((results) => results.name.includes(name));
-    setPlanets(planetsFiltered);
-  };
-*/
+  useEffect(() => {
+    const filteredData = data.filter(
+      (results) => results.name.toLowerCase().includes(name),
+    );
+    setFilteredPlanets(filteredData);
+  }, [name]);
+
   return (
     <tbody>
-      {data && (
+      {filteredPlanets && (
         // JSON => "results": [{planet_1},{planet_2},{planet_3},..]
-        data.map((results) => (
+        filteredPlanets.map((results) => (
           <tr key={ results.name }>
             <td>{ results.name }</td>
             <td>{ results.rotation_period }</td>
