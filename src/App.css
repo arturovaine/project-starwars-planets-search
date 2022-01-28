@@ -40,8 +40,9 @@
   }
 }
 
+/*
 tr:nth-child(even) {background-color: #f2f2f2;}
-/* Ref.: https://www.w3schools.com/css/css_table.asp */
+Ref.: https://www.w3schools.com/css/css_table.asp
 
 table, th, tr, td, tbody {
   font-size: 10px;
@@ -56,3 +57,4 @@ td {
 th {
   width: 100%;
 }
+*/
