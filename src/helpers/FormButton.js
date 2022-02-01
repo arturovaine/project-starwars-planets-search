@@ -5,10 +5,10 @@ export default function FormButton() {
   const {
     setFilteredPlanets,
     filteredPlanets,
-    // column,
-    // comparison,
-    // value,
-    filterByNumericValues,
+    column,
+    comparison,
+    value,
+    // filterByNumericValues,
     options,
     setOptions,
   } = useContext(DataTableContext);
@@ -23,7 +23,7 @@ export default function FormButton() {
 
   const [options, setOptions] = useState(INITIAL_OPTIONS);
 */
-  const { column, comparison, value } = filterByNumericValues;
+  // const { column, comparison, value } = filterByNumericValues;
 
   const handleFilter = () => {
     const numericFilteredPlanets = filteredPlanets.filter((result) => {
@@ -42,7 +42,7 @@ export default function FormButton() {
     const newOptions = options.filter((opt) => opt !== column);
 
     setOptions(newOptions);
-    console.log(newOptions);
+    // console.log(newOptions);
     setFilteredPlanets(numericFilteredPlanets);
   };
 

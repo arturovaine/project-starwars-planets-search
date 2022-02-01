@@ -36,10 +36,10 @@ function App() {
     data: planets,
 
     filterByName,
-    // column,
-    // comparison,
-    // value,
-    filterByNumericValues: { column, comparison, value },
+    column,
+    comparison,
+    value,
+    // filterByNumericValues: { column, comparison, value },
 
     setFilterByName,
     setColumnFilter,
