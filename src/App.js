@@ -52,8 +52,6 @@ function App() {
     setOptions,
   };
 
-  // console.log(TableContext);
-
   return (
     <DataTableContext.Provider value={ TableContext }>
       <h1>Projeto Star Wars - Trybe</h1>

@@ -3,15 +3,6 @@ import DataTableContext from '../context/DataTableContext';
 
 export default function FormColumnFilter() {
   const { setColumnFilter, options } = useContext(DataTableContext);
-  /* const [options, setOptions] = useState([
-    'population',
-    'orbital_period',
-    'diameter',
-    'rotation_period',
-    'surface_water',
-  ]); */
-
-  // console.log(setOptions);
 
   return (
     <label htmlFor="column-filter">

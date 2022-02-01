@@ -12,18 +12,6 @@ export default function FormButton() {
     options,
     setOptions,
   } = useContext(DataTableContext);
-  /*
-  const INITIAL_OPTIONS = [
-    'population!!',
-    'orbital_period',
-    'diameter',
-    'rotation_period',
-    'surface_water',
-  ];
-
-  const [options, setOptions] = useState(INITIAL_OPTIONS);
-*/
-  // const { column, comparison, value } = filterByNumericValues;
 
   const handleFilter = () => {
     const numericFilteredPlanets = filteredPlanets.filter((result) => {
@@ -42,7 +30,6 @@ export default function FormButton() {
     const newOptions = options.filter((opt) => opt !== column);
 
     setOptions(newOptions);
-    // console.log(newOptions);
     setFilteredPlanets(numericFilteredPlanets);
   };
 
@@ -58,3 +45,5 @@ export default function FormButton() {
     </div>
   );
 }
+
+// Resolução dos requisitos 2 e 3 com apoio do monitor Vinicius Dionysio e colega Carlos Dartora
