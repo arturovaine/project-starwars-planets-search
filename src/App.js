@@ -15,6 +15,14 @@ function App() {
 
   const [filteredPlanets, setFilteredPlanets] = useState([]);
 
+  const [options, setOptions] = useState([
+    'population',
+    'orbital_period',
+    'diameter',
+    'rotation_period',
+    'surface_water',
+  ]);
+
   const storeData = async () => {
     const data = await fetchAPI(); // 'data' recebe response da fetchAPI
     setPlanets(data);
@@ -40,13 +48,8 @@ function App() {
 
     filteredPlanets,
     setFilteredPlanets,
-    options: [
-      'population',
-      'orbital_period',
-      'diameter',
-      'rotation_period',
-      'surface_water',
-    ],
+    options,
+    setOptions,
   };
 
   // console.log(TableContext);

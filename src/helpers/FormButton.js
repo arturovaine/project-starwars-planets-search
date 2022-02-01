@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react';
+import React, { useContext } from 'react';
 import DataTableContext from '../context/DataTableContext';
 
 export default function FormButton() {
@@ -9,10 +9,12 @@ export default function FormButton() {
     // comparison,
     // value,
     filterByNumericValues,
+    options,
+    setOptions,
   } = useContext(DataTableContext);
-
+  /*
   const INITIAL_OPTIONS = [
-    'population',
+    'population!!',
     'orbital_period',
     'diameter',
     'rotation_period',
@@ -20,7 +22,7 @@ export default function FormButton() {
   ];
 
   const [options, setOptions] = useState(INITIAL_OPTIONS);
-
+*/
   const { column, comparison, value } = filterByNumericValues;
 
   const handleFilter = () => {
@@ -40,7 +42,7 @@ export default function FormButton() {
     const newOptions = options.filter((opt) => opt !== column);
 
     setOptions(newOptions);
-    console.log(options.filter((opt) => opt !== column));
+    console.log(newOptions);
     setFilteredPlanets(numericFilteredPlanets);
   };
 
