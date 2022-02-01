@@ -40,6 +40,13 @@ function App() {
 
     filteredPlanets,
     setFilteredPlanets,
+    options: [
+      'population',
+      'orbital_period',
+      'diameter',
+      'rotation_period',
+      'surface_water',
+    ],
   };
 
   // console.log(TableContext);
