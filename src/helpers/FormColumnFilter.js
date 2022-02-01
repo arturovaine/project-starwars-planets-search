@@ -11,6 +11,8 @@ export default function FormColumnFilter() {
     'surface_water',
   ]);
 
+  console.log(setOptions);
+
   return (
     <label htmlFor="column-filter">
       <select
