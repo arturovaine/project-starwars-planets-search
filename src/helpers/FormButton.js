@@ -5,32 +5,25 @@ export default function FormButton() {
   const {
     setFilteredPlanets,
     filteredPlanets,
-    column,
-    comparison,
-    value,
+    // column,
+    // comparison,
+    // value,
+    filterByNumericValues,
   } = useContext(DataTableContext);
 
-  // const [filteredPlanets, setFilteredPlanets] = useState([]);
+  const { column, comparison, value } = filterByNumericValues;
 
   const handleFilter = () => {
-    const PARSED_VALUE = Number(value);
-    // console.log(PARSED_VALUE);
-    // console.log("filtered");
-    // console.log(filteredPlanets);
-
     const numericFilteredPlanets = filteredPlanets.filter((result) => {
-      // console.log(typeof result[column]);
       if (comparison === 'maior que') {
-        // console.log();
-        return Number(result[column]) > PARSED_VALUE;
+        return Number(result[column]) > Number(value);
       } if (comparison === 'menor que') {
-        return Number(result[column]) < PARSED_VALUE;
+        return Number(result[column]) < Number(value);
       } if (comparison === 'igual a') {
-        return Number(result[column]) === PARSED_VALUE;
+        return Number(result[column]) === Number(value);
       }
-      return result[column] === value;
+      return result[column] === Number(value);
     });
-    // console.log(numericFilteredPlanets);
     setFilteredPlanets(numericFilteredPlanets);
   };
 

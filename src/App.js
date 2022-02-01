@@ -28,11 +28,12 @@ function App() {
     data: planets,
 
     filterByName,
-    column,
-    comparison,
-    value,
-    setFilterByName,
+    // column,
+    // comparison,
+    // value,
+    filterByNumericValues: { column, comparison, value },
 
+    setFilterByName,
     setColumnFilter,
     setComparisonFilter,
     setValueFilter,
