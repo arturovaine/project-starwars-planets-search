@@ -5,7 +5,7 @@ const INITIAL_CONTEXT = {
   filterByNumericValues: {
     column: 'population',
     comparison: 'maior que',
-    value: '100000',
+    value: '0',
   },
 };
 */

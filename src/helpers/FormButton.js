@@ -1,33 +1,36 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import DataTableContext from '../context/DataTableContext';
 
 export default function FormButton() {
   const {
-    data,
+    setFilteredPlanets,
+    filteredPlanets,
     column,
     comparison,
     value,
-    setFilteredPlanets,
   } = useContext(DataTableContext);
 
+  // const [filteredPlanets, setFilteredPlanets] = useState([]);
+
   const handleFilter = () => {
-    const PARSED_VALUE = parseInt(value, 10);
+    const PARSED_VALUE = Number(value);
+    // console.log(PARSED_VALUE);
+    // console.log("filtered");
+    // console.log(filteredPlanets);
 
-    const numericFilteredPlanets = data.filter((result) => {
+    const numericFilteredPlanets = filteredPlanets.filter((result) => {
+      // console.log(typeof result[column]);
       if (comparison === 'maior que') {
-        console.log('comparison');
-        return result[column] > PARSED_VALUE;
+        // console.log();
+        return Number(result[column]) > PARSED_VALUE;
       } if (comparison === 'menor que') {
-        console.log(comparison);
-        return result[column] < PARSED_VALUE;
+        return Number(result[column]) < PARSED_VALUE;
       } if (comparison === 'igual a') {
-        console.log(comparison);
-        return result[column] === value;
+        return Number(result[column]) === PARSED_VALUE;
       }
-
       return result[column] === value;
     });
-
+    // console.log(numericFilteredPlanets);
     setFilteredPlanets(numericFilteredPlanets);
   };
 

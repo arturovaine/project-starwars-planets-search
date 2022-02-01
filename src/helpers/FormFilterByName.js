@@ -7,7 +7,7 @@ function FormFilterByName() {
   return (
     <div>
       <input
-        data-testid="name-filter" // O campo de texto deve possuir a propriedade data-testid='name-filter'
+        data-testid="name-filter"
         type="text"
         placeholder="Filtrar por nome"
         onChange={ (event) => setFilterByName({ name: event.target.value }) }
