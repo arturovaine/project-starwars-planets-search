@@ -7,7 +7,12 @@ import fetchAPI from './services/fetchAPI';
 function App() {
   const [planets, setPlanets] = useState([]);
   // estado de infos dos planetas, chave 'results' da resposta da API
+
   const [filterByName, setFilterByName] = useState({ name: '' });
+  const [column, setColumnFilter] = useState('population');
+  const [comparison, setComparisonFilter] = useState('maior que');
+  const [value, setValueFilter] = useState(0);
+
   const [filteredPlanets, setFilteredPlanets] = useState([]);
 
   const storeData = async () => {
@@ -21,8 +26,19 @@ function App() {
 
   const TableContext = {
     data: planets,
+
     filterByName,
+    filterByNumericValues: {
+      column,
+      comparison,
+      value,
+    },
     setFilterByName,
+
+    setColumnFilter,
+    setComparisonFilter,
+    setValueFilter,
+
     filteredPlanets,
     setFilteredPlanets,
   };

@@ -6,6 +6,7 @@ export default function TableBody() {
   const {
     data,
     filterByName: { name },
+    // filterByNumericValues: { column },
     filteredPlanets,
     setFilteredPlanets,
   } = useContext(DataTableContext);
@@ -15,7 +16,8 @@ export default function TableBody() {
       (results) => results.name.toLowerCase().includes(name),
     );
     setFilteredPlanets(filteredData);
-  }, [name]);
+  }, [data, name, setFilteredPlanets]);
+  // similar ao componentDidUpdate
 
   return (
     <tbody>
