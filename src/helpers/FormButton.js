@@ -15,14 +15,16 @@ export default function FormButton() {
 
   const handleFilter = () => {
     const numericFilteredPlanets = filteredPlanets.filter((result) => {
-      if (comparison === 'maior que') {
+      switch (comparison) {
+      case 'maior que':
         return Number(result[column]) > Number(value);
-      } if (comparison === 'menor que') {
+      case 'menor que':
         return Number(result[column]) < Number(value);
-      } if (comparison === 'igual a') {
+      case 'igual a':
         return Number(result[column]) === Number(value);
+      default:
+        return result[column] === Number(value);
       }
-      return result[column] === Number(value);
     });
     setFilteredPlanets(numericFilteredPlanets);
   };
