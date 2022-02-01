@@ -11,16 +11,6 @@ export default function FormColumnFilter() {
     'surface_water',
   ]);
 
-  console.log(setOptions);
-
-  /*
-  useEffect(() => {
-    setOptions(options.filter(
-      (op) => op !== column,
-    ));
-  }, []);
-*/
-
   return (
     <label htmlFor="column-filter">
       <select
