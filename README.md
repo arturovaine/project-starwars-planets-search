@@ -1,6 +1,5 @@
 # Projeto Starwars Planets Search em context api e hooks!
 
----
 
 # Sumário
 
